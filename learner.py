@@ -12,8 +12,8 @@ def get_char():
     return msvcrt.getch().decode("utf-8")
 
 
-# charList = ["n", "r", "t", "a"]
-charList = ["i", "e", "s", "o"]
+charList = ["n", "r", "t", "a"]
+charList += ["i", "e", "s", "o"]
 count = 1
 base_time = time.time()
 timer = time.time()
