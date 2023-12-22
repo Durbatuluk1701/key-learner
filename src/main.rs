@@ -27,7 +27,8 @@ fn main() {
     println!("Welcome to the Rust Typing Game!");
     println!("Type characters and press 'q' to quit.");
 
-    let char_list: [char; 8] = ['n', 'r','t', 'a', 'i','e','s','o'];
+    // let char_list: [char; 8] = ['n', 'r','t', 'a', 'i','e','s','o'];
+    let char_list: [char; 4] = ['t', 'a', 'i','e',];
 
     let (tx, rx) = mpsc::channel();
 
@@ -48,17 +49,10 @@ fn main() {
     });
 
     let mut chars: VecDeque<char> = VecDeque::new();
-    if let Some(random_element) = select_random_element(&char_list) {
+    for _ in 0..=5 {
+      if let Some(random_element) = select_random_element(&char_list) {
         chars.push_back(*random_element)
-    }
-    if let Some(random_element) = select_random_element(&char_list) {
-        chars.push_back(*random_element)
-    }
-    if let Some(random_element) = select_random_element(&char_list) {
-        chars.push_back(*random_element)
-    }
-    if let Some(random_element) = select_random_element(&char_list) {
-        chars.push_back(*random_element)
+      }
     }
     print!("{esc}[2J{esc}[1;1H", esc = 27 as char);
 
