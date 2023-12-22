@@ -27,7 +27,7 @@ fn main() {
     println!("Welcome to the Rust Typing Game!");
     println!("Type characters and press 'q' to quit.");
 
-    let charList: [char; 8] = ['n', 'r','t', 'a', 'i','e','s','o'];
+    let char_list: [char; 8] = ['n', 'r','t', 'a', 'i','e','s','o'];
 
     let (tx, rx) = mpsc::channel();
 
@@ -48,16 +48,16 @@ fn main() {
     });
 
     let mut chars: VecDeque<char> = VecDeque::new();
-    if let Some(random_element) = select_random_element(&charList) {
+    if let Some(random_element) = select_random_element(&char_list) {
         chars.push_back(*random_element)
     }
-    if let Some(random_element) = select_random_element(&charList) {
+    if let Some(random_element) = select_random_element(&char_list) {
         chars.push_back(*random_element)
     }
-    if let Some(random_element) = select_random_element(&charList) {
+    if let Some(random_element) = select_random_element(&char_list) {
         chars.push_back(*random_element)
     }
-    if let Some(random_element) = select_random_element(&charList) {
+    if let Some(random_element) = select_random_element(&char_list) {
         chars.push_back(*random_element)
     }
     print!("{esc}[2J{esc}[1;1H", esc = 27 as char);
@@ -70,7 +70,7 @@ fn main() {
                 KeyCode::Char(c) => {
                     if c == chars[0] {
                       chars.pop_front();
-                      if let Some(random_element) = select_random_element(&charList) {
+                      if let Some(random_element) = select_random_element(&char_list) {
                           chars.push_back(*random_element)
                       }
                       print!("{esc}[2J{esc}[1;1H", esc = 27 as char);
