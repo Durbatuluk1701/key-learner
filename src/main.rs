@@ -49,7 +49,7 @@ fn main() {
     });
 
     let mut chars: VecDeque<char> = VecDeque::new();
-    for _ in 0..=5 {
+    for _ in 0..=3 {
       if let Some(random_element) = select_random_element(&char_list) {
         chars.push_back(*random_element)
       }
