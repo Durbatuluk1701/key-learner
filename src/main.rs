@@ -27,7 +27,7 @@ fn main() {
     println!("Welcome to the Rust Typing Game!");
     println!("Type characters and press 'q' to quit.");
 
-    let char_list: [char; 10] = ['n', 'r','t', 'a', 'c', 'l', 'i','e','s','o'];
+    let char_list: [char; 22] = ['y', 'g', 'm', 'f', 'w', 'v', 'p', 'u', 'k', 'n', 'r','t', 'a', 'c', 'l', 'i','e','s','o', 'b', 'd', 'h'];
     // let char_list: [char; 4] = ['t', 'a', 'i','e',];
 
     let (tx, rx) = mpsc::channel();
